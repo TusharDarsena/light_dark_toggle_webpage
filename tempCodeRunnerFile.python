@@ -1,0 +1,17 @@
+class Dog:
+    def __init__(self, name, age):  #called by default
+        self.name = name            #will ensure each dog has a name and age
+        self.age = age
+    def get_name(self):
+        return self.name
+    def bark(self):
+        print("bark")
+
+    def get_age(self):
+        return self.age
+    def set_age(self, age):
+        self.age = age
+
+d1 = Dog("Fido", 3)
+d1.set_age(40)
+print(d1.get_age())
