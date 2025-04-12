@@ -1,0 +1,323 @@
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
+:root {
+  --limegreen: hsl(163, 72%, 41%);
+  --brightred: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-start: hsl(37, 97%, 70%);
+  --instagram-end: hsl(329, 70%, 58%);
+  --youtube: hsl(348, 97%, 39%);
+  --toogle-bg-start: hsl(210, 78%, 56%);
+  --toogle-bg-end: hsl(146, 68%, 55%);
+  --toggle: hsl(230, 22%, 74%);
+  --dark-bg: hsl(230, 17%, 14%);
+  --dark-top-bg: hsl(232, 19%, 15%);
+  --dark-card: hsl(228, 28%, 20%);
+  --dark-text1: hsl(228, 34%, 66%);
+  --dark-text2: hsl(0, 0%, 100%);
+  --light-bg: hsl(0, 0%, 100%);
+  --light-top-bg: hsl(225, 100%, 98%);
+  --light-card: hsl(227, 47%, 96%);
+  --light-text1: hsl(228, 12%, 44%);
+  --light-text2: hsl(230, 17%, 14%);
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background: var(--background);
+  color: var(--text-color);
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color2);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color2);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.25rem;
+}
+@media (min-width: 40em) {
+  .header {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header__title {
+  width: 100%;
+}
+@media (min-width: 40em) {
+  .header__title {
+    width: auto;
+  }
+}
+.header__subtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-color2);
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: 1fr 3rem;
+  border: none;
+  margin: 0;
+}
+.toggle label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--toggle);
+}
+.toggle label[for=dark] {
+  line-height: 1.5rem;
+  margin-right: 0.8125rem;
+}
+.toggle__wrapper {
+  position: relative;
+  height: 1.5rem;
+}
+.toggle input[type=radio] {
+  margin: 0 -0.125rem 0 -0.125rem;
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.toggle input[type=radio]:focus ~ .toggle__button {
+  border: 2px solid white;
+}
+.toggle__background {
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-radius: 0.75rem;
+  background: var(--toggle-bg);
+  pointer-events: none;
+}
+.toggle__button {
+  position: absolute;
+  left: 0.1875rem;
+  top: 0.1875rem;
+  right: 100%;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background-color: var(--toggle-button);
+  transition: all 150ms ease-in-out;
+}
+.toggle #light:checked ~ .toggle__button {
+  left: calc(100% - 21px);
+  right: 3px;
+}
+.toggle #system:checked ~ .toggle__button {
+  left: 50%;
+  right: auto;
+  transform: translate(-50%);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.875rem;
+}
+@media (min-width: 40em) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 64em) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  padding: 1.5625rem;
+  border-radius: 0.3125rem;
+  text-align: center;
+  transition: background 150ms ease-in-out;
+  cursor: pointer;
+}
+.card:hover {
+  background: var(--card-hover);
+}
+.card--facebook {
+  border-top: 0.3125rem solid var(--facebook);
+}
+.card--twitter {
+  border-top: 0.3125rem solid var(--twitter);
+}
+.card--instagram {
+  padding-top: 1.875rem;
+}
+.card--instagram::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.3125rem;
+  background: linear-gradient(225deg, var(--instagram-end), var(--instagram-middle) 50.91%, var(--instagram-start) 100%);
+}
+.card--youtube {
+  border-top: 0.3125rem solid var(--youtube);
+}
+.card__platform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.3125rem;
+  margin-bottom: 1.75rem;
+}
+.card__subtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-color2);
+}
+.card__icon {
+  margin-right: 0.5rem;
+}
+.card__username {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-color2);
+}
+.card__followers {
+  margin-bottom: 1.5625rem;
+}
+.card__count {
+  color: var(--text-color);
+  font-weight: 700;
+  letter-spacing: -0.125rem;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.card__count--big {
+  font-size: 3.5rem;
+}
+.card__count--small {
+  font-size: 2rem;
+}
+.card__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.3125rem;
+  font-weight: 400;
+  color: var(--text-color2);
+  text-transform: uppercase;
+}
+.card__change {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.card__change--up {
+  color: var(--limegreen);
+}
+.card__change--down {
+  color: var(--brightred);
+}
+.card__change img {
+  margin-right: 0.25rem;
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  gap: 1.4375rem;
+}
+.card-grid .card__count {
+  margin-bottom: 0;
+}
+.card-grid .card__count,
+.card-grid .card__change {
+  align-self: end;
+}
+.card-grid img,
+.card-grid .card__change {
+  justify-self: end;
+}/*# sourceMappingURL=style.css.map */

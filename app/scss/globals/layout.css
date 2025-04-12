@@ -1,0 +1,28 @@
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 64em) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color2);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}/*# sourceMappingURL=layout.css.map */

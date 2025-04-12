@@ -1,17 +1,39 @@
-class Dog:
-    def __init__(self, name, age):  #called by default
+
+class student:
+    def __init__(self, name, age, grade):  #called by default
         self.name = name            #will ensure each dog has a name and age
         self.age = age
-    def get_name(self):
-        return self.name
-    def bark(self):
-        print("bark")
+        self.grade = grade
+    def get_grade(self):
+        return self.grade
+    
+class course:
+    def __init__(self, name, max_students):
+        self.name = name                       #this is an attribute
+        self.max_students = max_students
+        self.students = []                    #list of students in the course
+    def add_student(self, student):
+        if len(self.students) < self.max_students:
+            self.students.append(student)
+            return True
+        return False
+    def get_average_grade(self):
+        value = 0
+        for student in self.students:
+            value += student.get_grade()
+        return value / len(self.students)
+    
+s1= student("Tim", 19, 95)
+s2= student("Bill", 19, 75)
+s3= student("Jill", 19, 65)
 
-    def get_age(self):
-        return self.age
-    def set_age(self, age):
-        self.age = age
+course1 = course("Science", 2)
+course1.add_student(s1)
+course1.add_student(s2)
+course1.add_student(s3) #will not be added since max students is 2
+print(course1.students[0].name)
 
-d1 = Dog("Fido", 3)
-d1.set_age(40)
-print(d1.get_age())
+
+
+print(course1.students[0].name, course1.students[0].age, course1.students[0].grade) 
+print(course1.get_average_grade()) 

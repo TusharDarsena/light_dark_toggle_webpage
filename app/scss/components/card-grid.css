@@ -1,0 +1,18 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  justify-items: start;
+  gap: 1.4375rem;
+}
+.card-grid .card__count {
+  margin-bottom: 0;
+}
+.card-grid .card__count,
+.card-grid .card__change {
+  align-self: end;
+}
+.card-grid img,
+.card-grid .card__change {
+  justify-self: end;
+}/*# sourceMappingURL=card-grid.css.map */
