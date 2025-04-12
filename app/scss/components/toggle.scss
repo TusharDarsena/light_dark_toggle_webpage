@@ -3,23 +3,35 @@
 
 .toggle {
   display: grid;
-  grid-template-columns: 1fr 3rem;
+  grid-template-columns: 1fr rem(48) 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: rem(4.8) rem(8);
   border: none;
   margin: 0;
 
   label {
     font-size: rem(14);
-    font-weight: 700;
-    color: var(--toggle);
+    align-self: center;
 
     &[for='dark'] {
-      line-height: rem(24);
-      margin-right: rem(13);
+      grid-column: 1 / 2;
+      justify-self: end ;
     }
   }
+    &[for='system'] {
+      grid-column: 1 / 4;
+      grid-row: 2 /3;
+      justify-self: center;
+    }
+    &[for='light'] {
+      grid-column: 3 / 4;
+      
+    }
 
   &__wrapper {
     position: relative;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     height: rem(24);
   }
 
